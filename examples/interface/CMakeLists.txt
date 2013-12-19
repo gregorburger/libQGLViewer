@@ -1,5 +1,5 @@
-qt5_wrap_ui(UI_FILES viewerInterface.Qt3.ui viewerInterface.ui)
+qt5_wrap_ui(UI_FILES viewerInterface.ui)
 qt5_add_resources(RC_SOURCES../qglviewer)
-add_executable(interface interface.cpp main.cpp ${RC_SOURCES})
+add_executable(interface interface.cpp main.cpp ${RC_SOURCES} ${UI_FILES})
 qt5_use_modules(interface Widgets OpenGL Xml)
 target_link_libraries(interface ${OPENGL_LIBRARIES} QGLViewer)
