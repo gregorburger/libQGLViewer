@@ -14,7 +14,7 @@ link_libraries(${OpenGL_LIBRARY_DIR})
 
 add_subdirectory(QGLViewer)
 
-option(WITH_EXAMPLES "Compile QGLViewer examples." ON)
-if (WITH_EXAMPLES)
+option(QGLVIEWER_WITH_EXAMPLES "Compile QGLViewer examples." ON)
+if (QGLVIEWER_WITH_EXAMPLES)
     add_subdirectory(examples)
-endif (WITH_EXAMPLES)
+endif (QGLVIEWER_WITH_EXAMPLES)

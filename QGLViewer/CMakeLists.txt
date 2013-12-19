@@ -25,8 +25,8 @@ set(SOURCES qglviewer.cpp
 
 set(UIS ImageInterface.ui)
 
-option(WITH_VECTOR_RENDERING "Compile with Vector Rendering support. Disalbe if you have compile errors in VRender\\" ON)
-if (WITH_VECTOR_RENDERING)
+option(QGLVIEWER_WITH_VECTOR_RENDERING "Compile with Vector Rendering support. Disalbe if you have compile errors in VRender\\" ON)
+if (QGLVIEWER_WITH_VECTOR_RENDERING)
 
 set(SOURCES ${SOURCES}
         VRender/BackFaceCullingOptimizer.cpp
@@ -62,11 +62,11 @@ set(VRENDER_HEADERS
 
 set(UIS ${UIS} VRenderInterface.ui)
 
-else (WITH_VECTOR_RENDERING)
+else (QGLVIEWER_WITH_VECTOR_RENDERING)
 
 add_definitions(-DNO_VECTORIAL_RENDER)
 
-endif (WITH_VECTOR_RENDERING)
+endif (QGLVIEWER_WITH_VECTOR_RENDERING)
 
 qt5_wrap_ui(UI_HEADERS ${UIS})
 
