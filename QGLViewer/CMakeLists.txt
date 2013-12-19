@@ -72,6 +72,12 @@ qt5_wrap_ui(UI_HEADERS ${UIS})
 
 set(HEADERS ${QGL_HEADERS} ${UI_HEADERS})
 
-add_library(QGLViewer SHARED ${SOURCES} ${HEADERS})
+option(QGLVIEWER_STATIC "Compile QGLViewer Library static" OFF)
+if (QGLVIEWER_STATIC)
+    add_library(QGLViewer STATIC ${SOURCES} ${HEADERS})
+else (QGLVIEWER_STATIC)
+    add_library(QGLViewer SHARED ${SOURCES} ${HEADERS})
+endif (QGLVIEWER_STATIC)
+
 qt5_use_modules(QGLViewer Widgets OpenGL Xml)
 target_link_libraries(QGLViewer ${OPENGL_LIBRARIES}) 
